@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('fontes/PlayfairDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Arsenal';
+    src: url('fontes/Arsenal-Regular.ttf')  format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'simbolos';
+    src: url('fontes/WebSymbols-Regular.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root {
+    --corfundo0: #ffffff;
+    --corfundo1: #EBE6E0;
+    --corfundo2: #57402B;
+    --corlinhas: #5e5e5e;
+    --corfonte0: #ffffff;
+    --corfonte1: #000000;
+    --corfonte2: #b6551e;
+    --corfonte3: #4D4D4D;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Playfair Display', 'Times New Roman', serif;
+    --fonte-outras: 'Arsenal', Arial, sans-serif;
+    --fonte-simbolos: 'simbolos', 'Times New Roman', serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--corfundo1);
+}
+
+header {
+    min-height: 170px;
+    text-align: center;
+    color: var(--corfonte2)}
+
+header h1 {
+    padding-top: 45px;
+    font-family: var(--fonte-destaque);
+    font-weight: normal;
+    font-size: 2.5em;
+}
+
+header p {
+    font-family: var(--fonte-outras);
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+
+nav {
+
+    /* menu responsivo, início. 1 de 3*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    /* menu responsivo, fim*/
+    
+    min-width: 260px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 7.5px;
+    text-align: center;
+    border-top: 1px solid var(--corlinhas);
+    border-bottom: 1px solid var(--corlinhas);
+}
+
+/* menu responsivo, início. 2 de 3*/
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        padding: 0px;
+        width: 100%;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: inline-block;
+        padding: 0px;
+        width: 100%;
+    }
+/* menu responsivo, fim*/
+
+nav a {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4em;
+    text-decoration: none;
+    color: var(--corfonte3);
+    padding: 20px;
+}
+
+main {
+    min-width: 260px;
+    max-width: 760px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--corfundo0);
+    min-height: calc(100vh - 170px - 43px - 40px - 123px);
+    /* Esses valores são referente a altura de cada caixa.
+       - 170px do header.
+       - 43px do nav (border top 1px + border bottom 1px; padding top 7.5px + padding bottom 7.5px; content 26px. Total 43px).
+       - 40px do main (padding top 20px + padding bottom 20px. Total 40px).
+       - 123px do footer (padding top 5px + padding bottom 5px; content 113px. Total 123). */
+}
+
+div#slide {
+    margin: -20px -20px 20px -20px;
+    position: relative;
+}
+
+#cincopa_beae0a {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2 {
+    font-family: var(--fonte-destaque);
+    color: var(--corfonte2);
+    font-size: 1.6em;
+    font-weight: normal;
+}
+
+main p {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+#fonte {
+    text-align: right;
+}
+
+main div#img {
+    max-height: 400px;
+    max-width: 300px;
+    margin: auto;
+}
+
+main div#img > img {
+    width: 100%;
+}
+
+#strong {
+    text-align: center;
+    text-indent: 0px;
+}
+
+div.video {
+    padding-bottom: 56.6%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    padding: 0px;
+}
+
+footer {
+    font-family: var(--fonte-outras);
+    text-align: center;
+    color: var(--corfonte0);
+    background-color: var(--corfundo2);
+    padding: 5px;
+    position: relative;
+}
+
+footer p {
+    padding: 1px;
+}
+
+#sociais {
+    font-size: 1.2em;
+}
+
+#simbolos {
+    font-family: var(--fonte-simbolos);
+    font-weight: normal;
+    font-size: 2em;
+}
+
+.endereço {
+    font-family: var(--fonte-simbolos);
+    font-style: normal;
+}
+
+address {
+    display: inline-block;
+}
+
+#como_chegar {
+    text-decoration: underline;
+}
+
+#desenvolvedor {
+    font-size: 1em;
+}
+
+footer a {
+    color: var(--corfonte0);
+    text-decoration: none;
+}
+
+/* menu responsivo, início. 3 de 3*/
+    @media screen and (min-width: 768px) {
+        
+        /* nav */
+
+        nav {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        nav ul {
+            flex-direction: row;
+            width: 70%;
+        }       
+    }
+/* menu responsivo, fim.*/
